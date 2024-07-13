@@ -3,10 +3,6 @@ from pyparsing import empty
 import streamlit as st
 
 
-# my fuction
-from utils import (
-    Add_Back_Img
-)
 
 # page
 from main import main
@@ -34,4 +30,3 @@ if st.session_state.page == "view_question":
 
 if st.session_state.page == "interview":
     interview()
-
