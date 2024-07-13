@@ -189,7 +189,7 @@ def crawl_data(link):
     import time
     from selenium.webdriver.common.by import By
     chrome_options = Options()
-    # chrome_options.add_argument('--headless')  # 브라우저를 머리 없는 모드로 실행하려면 주석을 해제하세요.
+    chrome_options.add_argument('--headless')  # 브라우저를 머리 없는 모드로 실행하려면 주석을 해제하세요.
 
     # Service 객체를 사용하여 ChromeDriverManager를 통해 경로를 설정합니다.
     service = Service(ChromeDriverManager().install())
