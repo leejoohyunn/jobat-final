@@ -27,6 +27,9 @@ if st.session_state.page == "loading_question":
 
 if st.session_state.page == "view_question":
     view_question()
+    print('\n', "*"*20)
+    print("view_question() 성공")
+    print("*" * 20, '\n')
 
 if st.session_state.page == "interview":
     interview()

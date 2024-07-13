@@ -46,6 +46,10 @@ def loading_question():
         text = question_list['answer']
         questions = re.findall(r'\d+\.\s(.+?)(?=\n\d+\.|$)', text, re.DOTALL)
 
+        print('\n', "*" * 20)
+        print("questions: ", questions)
+        print("*" * 20, '\n')
+
         st.session_state.questions = questions
         hint_list = []
 

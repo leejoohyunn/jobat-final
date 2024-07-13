@@ -33,6 +33,11 @@ def feedback(question, ask):
 def view_question():
     st.set_page_config(page_title="Interview Question", page_icon="🦈")
     st.title("🦈 JOB AT's 예상 면접 질문")
+
+    print('\n', "*" * 20)
+    print("questions = st.session_state.questions \n", st.session_state.questions)
+    print("*" * 20, '\n')
+
     questions = st.session_state.questions
     hint_list = st.session_state.hint_list
 
