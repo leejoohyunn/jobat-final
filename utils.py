@@ -203,7 +203,7 @@ def crawl_data(link):
     driver_options = webdriver.ChromeOptions()
 
     # 헤드리스 옵션 사용 여부
-    driver_options.add_argument("headless")
+    # driver_options.add_argument("headless")
 
     # 가상 웹브라우저 설정
     display = Display(visible=0, size=(1024, 768))
