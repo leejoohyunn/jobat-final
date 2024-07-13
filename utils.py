@@ -156,7 +156,7 @@ def mk_questions(context, vector_db):
 
 
 #################################################
-# 클ㅗㄹ링
+# 크롤링
 def crawl_data(link):
     def scroll_down(driver):
         last_height = driver.execute_script("return document.body.scrollHeight")
@@ -174,8 +174,14 @@ def crawl_data(link):
                 break
             last_height = new_height
 
-    # Chrome 브라우저를 설정하고 실행합니다.
-    driver = webdriver.Chrome()
+    ### Chrome 브라우저를 설정하고 실행합니다. ###
+    # 로컬
+    # driver = webdriver.Chrome()
+
+    # ec2
+    driver_path = '/home/ubuntu/chromedriver-linux64/chromedriver'
+    driver = webdriver.Chrome(driver_path)
+
     info_list = []
     try:
         # 페이지로 이동
