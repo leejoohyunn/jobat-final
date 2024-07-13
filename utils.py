@@ -217,7 +217,7 @@ def crawl_data(link):
     # 사용 언어
     driver_options.add_argument("lang=ko_KR")
 
-    service = Service(ChromeDriverManager.install())
+    service = Service(ChromeDriverManager().install())
 
     # 드라이버 생성
     driver = webdriver.Chrome(service=service, options=driver_options)
