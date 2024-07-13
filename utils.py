@@ -182,18 +182,47 @@ def crawl_data(link):
     # driver_path = '/usr/bin/chromedriver'
     # driver = webdriver.Chrome(driver_path)
 
+    # from selenium import webdriver
+    # from selenium.webdriver.chrome.service import Service
+    # from webdriver_manager.chrome import ChromeDriverManager
+    # from selenium.webdriver.chrome.options import Options
+    # import time
+    # from selenium.webdriver.common.by import By
+    # chrome_options = Options()
+    # chrome_options.add_argument('--headless')  # 브라우저를 머리 없는 모드로 실행하려면 주석을 해제하세요.
+    #
+    # # Service 객체를 사용하여 ChromeDriverManager를 통해 경로를 설정합니다.
+    # service = Service(ChromeDriverManager().install())
+    # driver = webdriver.Chrome(service=service, options=chrome_options)
+
+    from pyvirtualdisplay import Display
     from selenium import webdriver
     from selenium.webdriver.chrome.service import Service
     from webdriver_manager.chrome import ChromeDriverManager
-    from selenium.webdriver.chrome.options import Options
-    import time
-    from selenium.webdriver.common.by import By
-    chrome_options = Options()
-    chrome_options.add_argument('--headless')  # 브라우저를 머리 없는 모드로 실행하려면 주석을 해제하세요.
 
-    # Service 객체를 사용하여 ChromeDriverManager를 통해 경로를 설정합니다.
-    service = Service(ChromeDriverManager().install())
-    driver = webdriver.Chrome(service=service, options=chrome_options)
+    driver_options = webdriver.ChromeOptions()
+
+    # 헤드리스 옵션 사용 여부
+    driver_options.add_argument("headless")
+
+    # 가상 웹브라우저 설정
+    display = Display(visible=0, size=(1024, 768))
+
+    # 가상 웹브라우저 실행
+    display.start()
+
+    # 하드웨어 가속 사용 여부
+    driver_options.add_argument("disable-gpu")
+
+    # 사용 언어
+    driver_options.add_argument("lang=ko_KR")
+
+    service = Service(ChromeDriverManager.install())
+
+    # 드라이버 생성
+    driver = webdriver.Chrome(service=service, options=driver_options)
+
+
 
     info_list = []
     try:
