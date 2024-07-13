@@ -50,7 +50,7 @@ def print_messages():
 
 def interview():
     # 창 위에 뜨는 아이
-    st.set_page_config(page_title="ChatGPT",page_icon="🦈")
+    st.set_page_config(page_title="Interview",page_icon="🦈")
     st.title("🦈 JOB AT")
 
 
@@ -171,11 +171,10 @@ def interview():
 
 
     with st.sidebar:
-        main = st.button("Home 화면", use_container_width=True)
+        main = st.button("__Home 화면__", use_container_width=True)
         if(main):
+            st.session_state.clear()
             navigate_to("main")
-        prev = st.button("질문 다시 보기", use_container_width=True)
+        prev = st.button("__질문 다시 보기__", use_container_width=True)
         if(prev):
             navigate_to("view_question")
-
-

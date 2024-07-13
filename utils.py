@@ -10,28 +10,26 @@ import numpy as np
 
 from langchain_core.callbacks.base import BaseCallbackHandler
 
+
 #####################
 ###  페이지 전환   ###
 #####################
 def navigate_to(page):
-    st.session_state.page = page    # session_state["page"]에 값 할당
+    st.session_state.page = page  # session_state["page"]에 값 할당
     main = st.empty()
     main.empty()
-    time.sleep(.2) # Bug workaround to enforce main.empty()
+    time.sleep(.2)  # Bug workaround to enforce main.empty()
     st.experimental_rerun()  # 페이지 새로 고침
-
-
-
 
 
 #####################
 ###    배경화면    ###
 #####################
 def Add_Back_Img(Image_link):
-# https://velog.io/@sjy1410/streamlit-%EB%B0%B0%EA%B2%BD%EC%82%AC%EC%A7%84-%EB%84%A3%EB%8A%94-%EB%B2%95
-# streamlit은 폴더 내부 사진의 경로를 읽을 수가 없어
-# 사진을 호스팅 한다음 그 사진의 링크를 불러와야한다.
-# background-image: url("사진의 링크")
+    # https://velog.io/@sjy1410/streamlit-%EB%B0%B0%EA%B2%BD%EC%82%AC%EC%A7%84-%EB%84%A3%EB%8A%94-%EB%B2%95
+    # streamlit은 폴더 내부 사진의 경로를 읽을 수가 없어
+    # 사진을 호스팅 한다음 그 사진의 링크를 불러와야한다.
+    # background-image: url("사진의 링크")
     st.markdown(
         f"""
         <style>
@@ -44,9 +42,6 @@ def Add_Back_Img(Image_link):
         """,
         unsafe_allow_html=True
     )
-
-
-
 
 
 #####################
@@ -64,11 +59,6 @@ def split_questions(text):
 
     # 결과 출력
     return sentences
-
-
-
-
-
 
 
 # 임베딩...
@@ -101,7 +91,6 @@ def split_text(text: str):
     return text_splitter.split_text(text)
 
 
-
 def summarize_job_openings(job_openings):
     from langchain import PromptTemplate
     from langchain_core.output_parsers import StrOutputParser
@@ -110,17 +99,14 @@ def summarize_job_openings(job_openings):
     template = '''
     You are an expert AI researcher. Extract the essentials from a given job posting.
     Please answer as Korean, and formatted as a paragraph.
-    
+
     Paragraph: {paragraph}
     '''
-    
+
     prompt = PromptTemplate.from_template(template=template)
-    
+
     summarize_chain = prompt | llm | StrOutputParser()
     return summarize_chain.invoke(dict(paragraph=job_openings))
-
-
-
 
 
 def mk_questions(context, vector_db):
@@ -137,11 +123,11 @@ def mk_questions(context, vector_db):
     Use the given context to generate 10 different predictive interview questions in Korean.
     Order your questions to match the interview scenario.
     Please only generate the questions, don't add any explanations.
-    
+
     <context>
     {context}
     </context>
-    
+
     {format_instructions}
     '''
 
@@ -152,7 +138,7 @@ def mk_questions(context, vector_db):
     )
 
     llm = init_model()
-    
+
     # print(prompt)
 
     qa_chain = create_stuff_documents_chain(llm, prompt)
@@ -169,12 +155,9 @@ def mk_questions(context, vector_db):
     return rag_chain.invoke(dict(input=context))
 
 
-
-
 #################################################
 # 클ㅗㄹ링
 def crawl_data(link):
-
     def scroll_down(driver):
         last_height = driver.execute_script("return document.body.scrollHeight")
 
@@ -190,7 +173,6 @@ def crawl_data(link):
             if new_height == last_height:
                 break
             last_height = new_height
-        
 
     # Chrome 브라우저를 설정하고 실행합니다.
     driver = webdriver.Chrome()
@@ -204,7 +186,8 @@ def crawl_data(link):
 
         # 버튼 클릭
         try:
-            button = driver.find_element(By.XPATH, '//*[@id="__next"]/main/div[1]/div/section/section/article[1]/div/button')
+            button = driver.find_element(By.XPATH,
+                                         '//*[@id="__next"]/main/div[1]/div/section/section/article[1]/div/button')
             driver.execute_script("arguments[0].click();", button)
             time.sleep(0.5)  # 클릭 후 페이지가 로드될 때까지 대기 (필요에 따라 조정)
         except NoSuchElementException:
@@ -218,12 +201,14 @@ def crawl_data(link):
             company_name = ''
 
         try:
-            location = driver.find_element(By.XPATH, '//*[@id="__next"]/main/div[1]/div/section/header/div/div[1]/span[2]').text
+            location = driver.find_element(By.XPATH,
+                                           '//*[@id="__next"]/main/div[1]/div/section/header/div/div[1]/span[2]').text
         except (NoSuchElementException, TimeoutException):
             location = ''
 
         try:
-            year = driver.find_element(By.XPATH, '//*[@id="__next"]/main/div[1]/div/section/header/div/div[1]/span[4]').text
+            year = driver.find_element(By.XPATH,
+                                       '//*[@id="__next"]/main/div[1]/div/section/header/div/div[1]/span[4]').text
         except (NoSuchElementException, TimeoutException):
             year = ''
 
@@ -233,27 +218,32 @@ def crawl_data(link):
             job = ''
 
         try:
-            about_position = driver.find_element(By.XPATH, '//*[@id="__next"]/main/div[1]/div/section/section/article[1]/div/p').text
+            about_position = driver.find_element(By.XPATH,
+                                                 '//*[@id="__next"]/main/div[1]/div/section/section/article[1]/div/p').text
         except (NoSuchElementException, TimeoutException):
             about_position = ''
 
         try:
-            about_work = driver.find_element(By.XPATH, '//*[@id="__next"]/main/div[1]/div/section/section/article[1]/div/div[1]/p').text
+            about_work = driver.find_element(By.XPATH,
+                                             '//*[@id="__next"]/main/div[1]/div/section/section/article[1]/div/div[1]/p').text
         except (NoSuchElementException, TimeoutException):
             about_work = ''
 
         try:
-            about_who = driver.find_element(By.XPATH, '//*[@id="__next"]/main/div[1]/div/section/section/article[1]/div/div[2]/p').text
+            about_who = driver.find_element(By.XPATH,
+                                            '//*[@id="__next"]/main/div[1]/div/section/section/article[1]/div/div[2]/p').text
         except (NoSuchElementException, TimeoutException):
             about_who = ''
 
         try:
-            about_better = driver.find_element(By.XPATH, '//*[@id="__next"]/main/div[1]/div/section/section/article[1]/div/div[3]/p').text
+            about_better = driver.find_element(By.XPATH,
+                                               '//*[@id="__next"]/main/div[1]/div/section/section/article[1]/div/div[3]/p').text
         except (NoSuchElementException, TimeoutException):
             about_better = ''
 
         try:
-            about_good = driver.find_element(By.XPATH, '//*[@id="__next"]/main/div[1]/div/section/section/article[1]/div/div[4]/p').text
+            about_good = driver.find_element(By.XPATH,
+                                             '//*[@id="__next"]/main/div[1]/div/section/section/article[1]/div/div[4]/p').text
         except (NoSuchElementException, TimeoutException):
             about_good = ''
 
@@ -284,16 +274,16 @@ def crawl_data(link):
             tags = ''
 
         try:
-            date = driver.find_element(By.XPATH, '//*[@id="__next"]/main/div[1]/div/section/section/article[3]/span').text
+            date = driver.find_element(By.XPATH,
+                                       '//*[@id="__next"]/main/div[1]/div/section/section/article[3]/span').text
         except (NoSuchElementException, TimeoutException):
-            date = ''           
+            date = ''
 
-
-        # 정보를 info_list에 추가합니다.
+            # 정보를 info_list에 추가합니다.
         info_list.append({'link': link, '회사명': company_name, '지역': location, '경력': year, '직무': job,
-                            '포지션 상세': about_position, '주요업무': about_work,
-                            '자격요건': about_who, '우대사항': about_better, '혜택 및 복지': about_good,
-                            '기술스택/툴': tool, '태그': tags, '마감일':date})
+                          '포지션 상세': about_position, '주요업무': about_work,
+                          '자격요건': about_who, '우대사항': about_better, '혜택 및 복지': about_good,
+                          '기술스택/툴': tool, '태그': tags, '마감일': date})
 
         print(f"{job} 정보 수집 완료")
 
