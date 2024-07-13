@@ -179,7 +179,7 @@ def crawl_data(link):
     # driver = webdriver.Chrome()
 
     # ec2
-    driver_path = '/home/ubuntu/chromedriver-linux64/chromedriver'
+    driver_path = '/usr/bin/chromedriver'
     driver = webdriver.Chrome(driver_path)
 
     info_list = []
