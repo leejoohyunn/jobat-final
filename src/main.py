@@ -46,10 +46,10 @@ def main():
         st.write("__□생성된 면접 질문에 대한 힌트 및 답변 피드백 & 꼬리물기 면접 서비스□__")
 
     with con21:
-        img1 = Image.open('image/main1.png')
+        img1 = Image.open('../image/main1.png')
         st.image(img1)
     with con22:
-        img2 = Image.open('image/main2.png')
+        img2 = Image.open('../image/main2.png')
         st.image(img2)
         st.subheader("")
 
