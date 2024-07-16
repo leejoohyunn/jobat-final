@@ -2,8 +2,6 @@
 
 ## ✅ Project Information
 
----
-
 ![intro.png](MD_images%2Fintro.png)
 
 - 사용자의 이력서 및 채용공고 기반 면접 질문 생성 프로그램
@@ -27,8 +25,6 @@
 [유튜브 시연 영상](https://youtu.be/_OWhFOPmMwI)
 
 ## 🤼 Members
-
----
 
 - [윤종석(13기)](https://github.com/JJadeYoon)
 
