@@ -46,10 +46,10 @@ def main():
         st.write("__□생성된 면접 질문에 대한 힌트 및 답변 피드백 & 꼬리물기 면접 서비스□__")
 
     with con21:
-        img1 = Image.open('image/main1.png')
+        img1 = Image.open('web_images/main1.png')
         st.image(img1)
     with con22:
-        img2 = Image.open('image/main2.png')
+        img2 = Image.open('web_images/main2.png')
         st.image(img2)
         st.subheader("")
 
@@ -68,5 +68,5 @@ def main():
     # with con31 :
     #     # TODO : 꾸미기 사진
     #     st.header("# TODO : 하단 이미지 첨부")
-    #     # st.image("하단 이미지 링크", width = 630)
+    #     # st.web_images("하단 이미지 링크", width = 630)
     #     # st.markdown(hide_fullscreen_button, unsafe_allow_html=True)
