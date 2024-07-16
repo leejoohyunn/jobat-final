@@ -29,7 +29,7 @@ def Add_Back_Img(Image_link):
     # https://velog.io/@sjy1410/streamlit-%EB%B0%B0%EA%B2%BD%EC%82%AC%EC%A7%84-%EB%84%A3%EB%8A%94-%EB%B2%95
     # streamlit은 폴더 내부 사진의 경로를 읽을 수가 없어
     # 사진을 호스팅 한다음 그 사진의 링크를 불러와야한다.
-    # background-image: url("사진의 링크")
+    # background-web_images: url("사진의 링크")
     st.markdown(
         f"""
         <style>

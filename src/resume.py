@@ -94,10 +94,10 @@ def resume():
                 st.write("__1. '원티드 채용 공고'에서 지원하고자 하는 채용공고를 들어갑니다!__")
                 st.write("__2. 위 사진과 같이 url을 복사해서 가져옵니다!__")
                 st.write("__3. 아래 사진과 같이 url을 입력합니다!__")
-                img1 = Image.open('../image/1.png')
+                img1 = Image.open('web_images/1.png')
                 st.image(img1)
                 st.write("__4. '자동으로 입력된 채용공고 보기' 버튼을 눌러 제대로 채용공고가 불러와졌는지 확인 가능합니다!__")
-                img2 = Image.open('../image/2.png')
+                img2 = Image.open('web_images/2.png')
                 st.image(img2)
         if (st.button("↻직접 채용공고 입력하기")):
             st.session_state.url_to_type = True
