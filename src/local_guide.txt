@@ -1,0 +1,6 @@
+1. ~/src/.streamlit/secrets.toml 파일 생성
+2. 생성한 파일 내에 api key 입력
+    ex. OPENAI_API_KEY = "sk-"
+3. utils.py 의 크롤링 코드 수정
+    crawl_data 함수의 Chrome 브라우저 설정 중 ec2 부분을 주석 처리하고 로컬 부분의 주석을 해제
+3. `streamlit run app.py` 명령어로 실행
