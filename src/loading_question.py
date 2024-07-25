@@ -31,8 +31,8 @@ def loading_question():
     # hint 생성기
     hint_prompt = PromptTemplate.from_template(
         template="""
-        당신은 매우 친절한 adviser입니다.
-        {questions} 를 읽고 해당 질문에 대한 면접 대답 힌트를 한문단으로 생성해주세요
+        당신은 매우 친절한 의약품 전문가이자 의사입니다.
+        {questions} 를 읽고 해당 질문에 대한 대답을 한문단으로 생성해주세요
         """
     )
 
