@@ -50,8 +50,8 @@ def print_messages():
 
 def interview():
     # 창 위에 뜨는 아이
-    st.set_page_config(page_title="Interview",page_icon="🦈")
-    st.title("🦈 JOB AT")
+    st.set_page_config(page_title="궁금한 의약품 및 약품 영향",page_icon="🦈")
+    st.title("🦈 DUR QA")
 
 
     # session_id : 카톡방느낌, session_id가 달라지면 대화창이 달라짐
@@ -104,7 +104,7 @@ def interview():
 
         elif (st.session_state.next_question==len(st.session_state.questions)) & (st.session_state.cnt==3):
             with st.chat_message('assistant'):
-                st.write("면접 마치겠습니다. 면접에 응해주셔서 감사합니다.") # write인지 markdown인지 확인하기
+                st.write("이상 응답을 마치겠습니다. 도움이 되었길 바랍니다") # write인지 markdown인지 확인하기
                 st.session_state.interview_stop = True
 
         elif st.session_state.cnt == 3:
