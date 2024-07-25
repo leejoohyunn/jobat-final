@@ -41,7 +41,7 @@ def dataframe_to_string(df_info):
 def resume():
     # 창 위에 뜨는 아이
     st.set_page_config(page_title="Resume", page_icon="🦈")
-    st.subheader("🦈 이력서&채용공고에 대한 정보를 입력해주세요")
+    st.subheader("🦈 환자에 대한 특이사항 정보를 입력해주세요")
     st.subheader(" ")
 
     # 이력서를 입력하는데 창 크기를 사용자가 집적 늘려야함...
@@ -69,7 +69,7 @@ def resume():
         st.session_state.prev_no_jd = False
 
     # 이력서 입력
-    st.subheader("(๓° ˘ °๓)이력서를 입력해 주세요")
+    st.subheader("(๓° ˘ °๓)환자정보를 입력해 주세요")
     resume = st.text_area('', max_chars=4000)
     st.session_state.resume = resume
 
@@ -157,7 +157,7 @@ def resume():
 
     with con12:
         # 면접 질문 생성 버튼 클릭 시 세션 상태에 입력된 텍스트 저장
-        gen_question = st.button("면접 질문 생성", use_container_width=True)
+        gen_question = st.button("질문 생성", use_container_width=True)
         if gen_question:
             st.session_state.resume = resume
 
