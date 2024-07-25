@@ -11,7 +11,7 @@ from utils import (
 def main():
     # TODO : 창 디자인
     # # 창 위에 뜨는 아이
-    st.set_page_config(page_title="JOB Advise boT", page_icon="🦈")
+    st.set_page_config(page_title="DUR QA boT", page_icon="🦈")
 
     # 레이아웃 구성 방법
     # https://python-programming-diary.tistory.com/137
