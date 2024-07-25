@@ -39,11 +39,11 @@ def main():
         # TODO : 꾸미기 사진
         st.image("https://i.imgur.com/W1pEg2c.png", width=500)
         st.markdown(hide_fullscreen_button, unsafe_allow_html=True)
-        st.subheader("(⩌⩊⩌)이력서&채용공고 기반 모의 면접 서비스")
-        st.write("__□ (。O ⩊ O。)사용자는 자기소개서와 채용공고를 입력합니다!__")
-        st.write("__□ (˶• ﻌ •˶)사용자의 입력을 바탕으로 면접 질문을 생성합니다!!__")
+        st.subheader("(⩌⩊⩌)DUR 정보 기반 질의응답 서비스")
+        st.write("__□ (。O ⩊ O。)사용자는 DUR 의약품에 관해 궁금한점을 입력합니다!__")
+        #st.write("__□ (˶• ﻌ •˶)사용자의 입력을 바탕으로 알맞은 질문을 생성합니다!!__")
         st.write("__□ (๓° ˘ °๓)사용자는 아래와 같은 서비스를 이용할 수 있습니다!!!__")
-        st.write("__□생성된 면접 질문에 대한 힌트 및 답변 피드백 & 꼬리물기 면접 서비스□__")
+        #st.write("__□생성된 질문에 대한 힌트 및 답변 피드백 & 꼬리물기 면접 서비스□__")
 
     with con21:
         img1 = Image.open('web_images/main1.png')
