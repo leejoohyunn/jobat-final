@@ -19,7 +19,8 @@ def navigate_to(page):
     main = st.empty()
     main.empty()
     time.sleep(.2)  # Bug workaround to enforce main.empty()
-    st.experimental_rerun()  # 페이지 새로 고침
+    # st.experimental_rerun()  # 페이지 새로 고침
+    st.rerun()  # streamlit버전의 이유로 수정
 
 
 #####################
@@ -177,32 +178,32 @@ def crawl_data(link):
     ### Chrome 브라우저를 설정하고 실행합니다. ###
 
     ########## 로컬 ##########
-    # driver = webdriver.Chrome()
+    driver = webdriver.Chrome()
 
-    ########## ec2 ##########
-    from pyvirtualdisplay import Display
-    from selenium import webdriver
-    from selenium.webdriver.chrome.service import Service
-    from webdriver_manager.chrome import ChromeDriverManager
+    # ########## ec2 ##########
+    # from pyvirtualdisplay import Display
+    # from selenium import webdriver
+    # from selenium.webdriver.chrome.service import Service
+    # from webdriver_manager.chrome import ChromeDriverManager
 
-    driver_options = webdriver.ChromeOptions()
+    # driver_options = webdriver.ChromeOptions()
 
-    # 가상 웹브라우저 설정
-    display = Display(visible=0, size=(1024, 768))
+    # # 가상 웹브라우저 설정
+    # display = Display(visible=0, size=(1024, 768))
 
-    # 가상 웹브라우저 실행
-    display.start()
+    # # 가상 웹브라우저 실행
+    # display.start()
 
-    # 하드웨어 가속 사용 여부
-    driver_options.add_argument("disable-gpu")
+    # # 하드웨어 가속 사용 여부
+    # driver_options.add_argument("disable-gpu")
 
-    # 사용 언어
-    driver_options.add_argument("lang=ko_KR")
+    # # 사용 언어
+    # driver_options.add_argument("lang=ko_KR")
 
-    service = Service(ChromeDriverManager().install())
+    # service = Service(ChromeDriverManager().install())
 
-    # 드라이버 생성
-    driver = webdriver.Chrome(service=service, options=driver_options)
+    # # 드라이버 생성
+    # driver = webdriver.Chrome(service=service, options=driver_options)
 
 
 
