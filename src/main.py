@@ -37,7 +37,8 @@ def main():
         empty()  # 여백부분2
     with con11:
         # TODO : 꾸미기 사진
-        st.image("https://i.imgur.com/W1pEg2c.png", width=500)
+        # st.image("https://i.imgur.com/W1pEg2c.png", width=500)
+        st.header("DUR QA boT",divider="gray")
         st.markdown(hide_fullscreen_button, unsafe_allow_html=True)
         st.subheader("(⩌⩊⩌)DUR 정보 기반 질의응답 서비스")
         st.write("__□ (。O ⩊ O。)사용자는 DUR 의약품에 관해 궁금한점을 입력합니다!__")
@@ -46,17 +47,20 @@ def main():
         #st.write("__□생성된 질문에 대한 힌트 및 답변 피드백 & 꼬리물기 면접 서비스□__")
 
     with con21:
-        img1 = Image.open('web_images/main1.png')
+        # img1 = Image.open('web_images/main1.png')
+        img1 = Image.open('web_images/AIA_img.png')
         st.image(img1)
     with con22:
-        img2 = Image.open('web_images/main2.png')
+        # img2 = Image.open('web_images/main2.png')
+        img2 = Image.open('web_images/blank_img.png')
         st.image(img2)
         st.subheader("")
 
     with con31:
         # TODO : 링크 버튼 -> 페이지 이동
         # TODO : 링크 버튼 디자인
-        st.link_button("We Are...", url="https://blog.naver.com/t-ave", use_container_width=True)
+        # st.link_button("We Are...", url="https://blog.naver.com/t-ave", use_container_width=True)
+        st.link_button("We Are...", url="https://sites.google.com/view/aiahongikuniversity", use_container_width=True)
     with con32:
         # 페이지 이동(resume)
         # TODO : 링크 버튼 디자인
