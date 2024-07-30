@@ -50,3 +50,9 @@ def chat():
         for i in range(len(st.session_state['generated'])-1, -1, -1):
             message(st.session_state['past'][i], is_user=True, key=str(i) + '_user')
             message(st.session_state["generated"][i], key=str(i))
+
+    col1, col2, col3 = st.columns([1, 2, 1])
+    with col1:
+        if st.button('Back to Main Page'):
+            # Action to navigate to the main page
+            navigate_to("main")  # Adjust this function to your navigation logic
