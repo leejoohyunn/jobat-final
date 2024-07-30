@@ -10,6 +10,8 @@ from resume import resume
 from loading_question import loading_question
 from view_question import view_question
 from interview import interview
+from chat import chat
+from change_page import change_page
 
 # page 전환을 위한 session_state.page 생성
 if 'page' not in st.session_state:
