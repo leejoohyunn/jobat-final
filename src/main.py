@@ -13,6 +13,13 @@ def main():
     # # 창 위에 뜨는 아이
     st.set_page_config(page_title="AIA", page_icon="🦈")
 
+    title_html = """
+    <div style="text-align: center; padding: 20px;">
+        <h1 style="font-size: 3em; color: #000000;">AIA</h1>
+    </div>
+    """
+    st.markdown(title_html, unsafe_allow_html=True)
+
     # 레이아웃 구성 방법
     # https://python-programming-diary.tistory.com/137
     empty1, con11, empty2 = st.columns([0.1, 2.5, 0.1])
