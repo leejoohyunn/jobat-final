@@ -1,6 +1,11 @@
 import openai
 import streamlit as st
 from streamlit_chat import message
+from utils import (
+    navigate_to,
+    crawl_data,
+    Add_Back_Img
+)
 
 # Streamlit의 secrets 기능을 사용하여 API 키 로드
 openai.api_key = st.secrets["OPENAI_API_KEY"]
