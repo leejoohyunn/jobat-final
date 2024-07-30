@@ -68,7 +68,7 @@ def main():
         if (next_page):
             # TODO : resume.py
             # navigate_to("change_page")
-            navigate_to("interview")
+            navigate_to("change_page")
 
     # with con31 :
     #     # TODO : 꾸미기 사진
