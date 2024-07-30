@@ -67,7 +67,7 @@ def main():
         next_page = st.button("시작하기", use_container_width=True)
         if (next_page):
             # TODO : resume.py
-            # navigate_to("resume")
+            # navigate_to("change_page")
             navigate_to("interview")
 
     # with con31 :
