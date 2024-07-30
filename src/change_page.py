@@ -1,4 +1,9 @@
 import streamlit as st
+from utils import (
+    navigate_to,
+    crawl_data,
+    Add_Back_Img
+)
 
 def change_page():
     # Title for the main page
