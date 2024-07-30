@@ -53,6 +53,6 @@ def chat():
 
     col1, col2, col3 = st.columns([1, 2, 1])
     with col1:
-        if st.button('Back to Main Page'):
+        if st.button('메인 메뉴 돌아가기'):
             # Action to navigate to the main page
             navigate_to("main")  # Adjust this function to your navigation logic
