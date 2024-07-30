@@ -36,5 +36,5 @@ def change_page():
     # Sidebar with navigation button
     st.sidebar.title('메뉴')
     if st.sidebar.button('메인으로 돌아가기'):
-        st.write('메인 페이지로 돌아갑니다.')g
+        st.write('메인 페이지로 돌아갑니다.')
         # 실제 네비게이션 코드 삽입 가능
