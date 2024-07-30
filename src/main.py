@@ -11,7 +11,7 @@ from utils import (
 def main():
     # TODO : 창 디자인
     # # 창 위에 뜨는 아이
-    st.set_page_config(page_title="DUR QA boT", page_icon="🦈")
+    st.set_page_config(page_title="AIA", page_icon="🦈")
 
     # 레이아웃 구성 방법
     # https://python-programming-diary.tistory.com/137
@@ -40,10 +40,10 @@ def main():
         # st.image("https://i.imgur.com/W1pEg2c.png", width=500)
         st.header("DUR QA boT",divider="gray")
         st.markdown(hide_fullscreen_button, unsafe_allow_html=True)
-        st.subheader("(⩌⩊⩌)DUR 정보 기반 질의응답 서비스")
-        st.write("__□ (。O ⩊ O。)사용자는 DUR 의약품에 관해 궁금한점을 입력합니다!__")
+        #st.subheader("(⩌⩊⩌)DUR 정보 기반 질의응답 서비스")
+        #st.write("__□ (。O ⩊ O。)사용자는 DUR 의약품에 관해 궁금한점을 입력합니다!__")
         #st.write("__□ (˶• ﻌ •˶)사용자의 입력을 바탕으로 알맞은 질문을 생성합니다!!__")
-        st.write("__□ (๓° ˘ °๓)사용자는 아래와 같은 서비스를 이용할 수 있습니다!!!__")
+        #st.write("__□ (๓° ˘ °๓)사용자는 아래와 같은 서비스를 이용할 수 있습니다!!!__")
         #st.write("__□생성된 질문에 대한 힌트 및 답변 피드백 & 꼬리물기 면접 서비스□__")
 
     with con21:
