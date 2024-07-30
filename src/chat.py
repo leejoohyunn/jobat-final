@@ -3,7 +3,7 @@ import streamlit as st
 from streamlit_chat import message
 
 # Streamlit의 secrets 기능을 사용하여 API 키 로드
-openai.api_key = st.secrets["openai_api_key"]
+openai.api_key = st.secrets["OPENAI_API_KEY"]
 
 # OpenAI 클라이언트 인스턴스 생성
 client = openai.OpenAI(api_key=openai.api_key)
