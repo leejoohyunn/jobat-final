@@ -23,6 +23,12 @@ if st.session_state.page == "main":
 
 if st.session_state.page == "resume":
     resume()
+    
+if st.session_state.page == "chat":
+    chat()
+    
+if st.session_state.page == "change_page":
+    change_page()
 
 if st.session_state.page == "loading_question":
     loading_question()
