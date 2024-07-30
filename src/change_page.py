@@ -37,6 +37,7 @@ def change_page():
 # Sidebar with navigation button
     st.sidebar.title('메뉴')
     if st.sidebar.button('메인으로 돌아가기'):
+        navigate_to("main")
         # main.py로 돌아가는 코드
     # st.experimental_rerun() 사용 시, 선택적 리다이렉션 구현 가능
         st.write('메인 페이지로 돌아갑니다.')
