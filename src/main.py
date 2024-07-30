@@ -45,7 +45,7 @@ def main():
     with con11:
         # TODO : 꾸미기 사진
         # st.image("https://i.imgur.com/W1pEg2c.png", width=500)
-        st.header("DUR QA boT",divider="gray")
+        #st.header("DUR QA boT",divider="gray")
         st.markdown(hide_fullscreen_button, unsafe_allow_html=True)
         #st.subheader("(⩌⩊⩌)DUR 정보 기반 질의응답 서비스")
         #st.write("__□ (。O ⩊ O。)사용자는 DUR 의약품에 관해 궁금한점을 입력합니다!__")
